@@ -8,11 +8,6 @@ var
   dotflow: string = fmt"{home}.config/dotflow"
   dotflow_file: string = fmt"{home}.config/dotflow/.dotflow"
 
-# TODO: Create a file to save the old path so we can rebuild the dotfiles with dotflow
-#[
-  .dotflow =
-  .zshrc:/home/artur/.zshrc
-]#
 proc store(src: string, dest: string) =
   let f = open(fmt"{dotflow_file}", fmAppend )
   f.writeLine(fmt"{src}:{dest}")
