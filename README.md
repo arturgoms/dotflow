@@ -13,4 +13,15 @@ dotflow install # Use this in a new environment, this will put your dotfiles in 
 ```
 
 ## How to install
-coming soon...
+
+### Build by yourself
+1. Install nim: 
+https://nim-lang.org/install.html
+2. Install cligen: 
+```shell
+nimble install cligen
+```
+3. Build:
+```shell
+nim c src/dotflow.nim
+```
