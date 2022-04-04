@@ -11,3 +11,6 @@ dotflow link -p PATH # Move the original file to dotflow folder and creates a li
 dotflow install # Use this in a new environment, this will put your dotfiles in the right place again
 
 ```
+
+## How to install
+coming soon...
