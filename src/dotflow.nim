@@ -9,10 +9,12 @@ var
   dotflow_file: string = fmt"{home}.config/dotflow/.dotflow"
 
 proc store(src: string, dest: string) =
+  # Add path to dotflow file
   let f = open(fmt"{dotflow_file}", fmAppend )
   f.writeLine(fmt"{src}:{dest}")
 
 proc install() =
+  # Install dotfiles
   var files = newSeq[Table[string, string]]()
 
   for line in lines dotflow_file:
@@ -41,6 +43,7 @@ proc install() =
     createSymlink(file["src"], file["dest"])
 
 proc init()  =
+  # Initialize dotflow
   if fileExists(fmt"{home}/.config/dotflow"):
     echo("[WARNING] Dotflow already was initialized.")
     return
@@ -48,7 +51,7 @@ proc init()  =
   createDir(fmt"{home}/.config/dotflow")
   
 proc link(path: string) =
-
+  # Link the file to the dotflow file
   if symlinkExists(path):
     echo("[ERROR] This file is already a symbolic link")
     return
